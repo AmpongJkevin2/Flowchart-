@@ -1,1 +1,1 @@
-graph LR; A((Start))-->B[/Read k/]; B-->C[new RQ]; C-->D{isEmpty?}; D--No-->E[enqueue]; E-->D; D--Yes-->F[i=0]; F-->G{i<k?}; G--Yes-->H[/print dequeue/]; H-->I[i++]; I-->G; G--No-->J((End));
+graph TD; A((Start))-->B[/Read k/]; B-->C[new RQ]; C-->D{isEmpty?}; D--No-->E[enqueue]; E-->D; D--Yes-->F[i=0]; F-->G{i<k?}; G--Yes-->H[/print dequeue/]; H-->I[i++]; I-->G; G--No-->J((End));

@@ -1,1 +1,1 @@
-graph LR; A((Start))-->B["champion="]; B-->C["count=0"]; C-->D{"isEmpty()?"}; D--No-->E["read word"]; E-->F["count++"]; F-->G{"bernoulli"}; G--Yes-->H["champion=word"]; H-->D; G--No-->D; D--Yes-->I[/Print champion/]-->J((End));
+graph TD; A((Start))-->B["champion="]; B-->C["count=0"]; C-->D{"isEmpty()?"}; D--No-->E["read word"]; E-->F["count++"]; F-->G{"bernoulli"}; G--Yes-->H["champion=word"]; H-->D; G--No-->D; D--Yes-->I[/Print champion/]-->J((End));

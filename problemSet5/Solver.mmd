@@ -1,1 +1,1 @@
-graph LR; A((Start))-->B[Init PQs]-->C[Loop]-->D[node=PQ.delMin]-->E{goal?}; E--Yes-->F((SOLVED)); E--No-->G[Add neighbors]-->H[twin=twinPQ.delMin]-->I{twin goal?}; I--Yes-->J((UNSOLVABLE)); I--No-->C;
+graph TD; A((Start))-->B[Init PQs]-->C[Loop]-->D[node=PQ.delMin]-->E{goal?}; E--Yes-->F((SOLVED)); E--No-->G[Add neighbors]-->H[twin=twinPQ.delMin]-->I{twin goal?}; I--Yes-->J((UNSOLVABLE)); I--No-->C;

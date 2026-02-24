@@ -1,1 +1,1 @@
-graph LR; A((Start))-->B{isOpen?}; B--No-->C[Set true]; C-->D["sites++"]; D-->E{row==1?}; E--Yes-->F[union top]; F-->G{row==n?}; E--No-->G; G--Yes-->H[union bot]; H-->I{neighbors?}; G--No-->I; I--Yes-->J[union ...]; J-->I; I--No-->Z((End)); B--Yes-->Z;
+graph TD; A((Start))-->B{isOpen?}; B--No-->C[Set true]; C-->D["sites++"]; D-->E{row==1?}; E--Yes-->F[union top]; F-->G{row==n?}; E--No-->G; G--Yes-->H[union bot]; H-->I{neighbors?}; G--No-->I; I--Yes-->J[union ...]; J-->I; I--No-->Z((End)); B--Yes-->Z;
