@@ -1,6 +1,6 @@
 graph TD
-    A[Start Solver(initial)] --> B[pq.insert initial node];
-    B --> C[twinPq.insert initial.twin node];
+    A["Start Solver(initial)"] --> B[pq.insert initial node];
+    B --> C["twinPq.insert initial.twin node"];
     C --> D[node = pq.delMin()];
     D --> E{node.board.isGoal()};
     E -- True --> F[foundSolvable = true, break];

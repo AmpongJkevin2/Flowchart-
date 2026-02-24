@@ -1,6 +1,6 @@
 graph TD
-    A[Start] --> B[n = Integer.parseInt(args[0])];
-    B --> C[T = Integer.parseInt(args[1])];
+    A[Start] --> B["n = Integer.parseInt(args[0])"];
+    B --> C["T = Integer.parseInt(args[1])"];
     C --> D[timer = new Stopwatch()];
     D --> E[stats = new PercolationStats(n, T)];
     E --> F[time = timer.elapsedTime()];

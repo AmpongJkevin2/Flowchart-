@@ -35,7 +35,7 @@ jobs:
           echo '{"args": ["--no-sandbox"]}' > puppeteer-config.json
           
           # Loop through all .mmd files and generate PNGs
-          for mmd_file in $(find ./final_report -type f -name "*.mmd"); do
+          for mmd_file in $(find ./final_report/finalAnswer -type f -name "*.mmd"); do
             output_png="${mmd_file%.mmd}_flowchart.png"
             echo "Processing $mmd_file -> $output_png"
             mmdc -i "$mmd_file" -o "$output_png" -p puppeteer-config.json

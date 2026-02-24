@@ -1,5 +1,5 @@
 graph TD
-    A[Start FastCollinearPoints(points)] --> B{points == null};
+    A["Start FastCollinearPoints(points)"] --> B{points == null};
     B -- True --> C[Throw IllegalArgumentException];
     B -- False --> D[Check for null points and duplicates];
     D --> E[Sort pointsCopy];

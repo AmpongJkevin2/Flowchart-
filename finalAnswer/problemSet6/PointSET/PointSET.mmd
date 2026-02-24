@@ -1,9 +1,9 @@
 graph TD
-    A[Start nearest(p)] --> B{isEmpty()};
+    A["Start nearest(p)"] --> B{isEmpty()};
     B -- True --> C[Return null];
     B -- False --> D[minDistance = Infinity];
     D --> E[For each point in set];
-    E --> F[distance = point.distanceSquaredTo(p)];
+    E --> F["distance = point.distanceSquaredTo(p)"];
     F --> G{distance < minDistance};
     G -- True --> H[minDistance = distance, nearest = point];
     G -- False --> I;

@@ -1,6 +1,6 @@
 graph TD
-    A[Start] --> B[k = Integer.parseInt(args[0])];
-    B --> C[rq = new RandomizedQueue<String>()];
+    A[Start] --> B["k = Integer.parseInt(args[0])"];
+    B --> C["rq = new RandomizedQueue<String>()"];
     C --> D{!StdIn.isEmpty()};
     D -- True --> E[rq.enqueue(StdIn.readString())];
     E --> D;

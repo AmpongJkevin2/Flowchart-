@@ -1,11 +1,11 @@
 graph TD
-    A[Start slopeTo(that)] --> B{this.compareTo(that) == 0};
+    A["Start slopeTo(that)"] --> B{this.compareTo(that) == 0};
     B -- True --> C[Return Double.NEGATIVE_INFINITY];
     B -- False --> D{this.y == that.y};
     D -- True --> E[Return +0.0];
     D -- False --> F{this.x == that.x};
     F -- True --> G[Return Double.POSITIVE_INFINITY];
-    F -- False --> H[Return (that.y - this.y) / (that.x - this.x)];
+    F -- False --> H["Return (that.y - this.y) / (that.x - this.x)"];
     C --> I[End];
     E --> I;
     G --> I;
