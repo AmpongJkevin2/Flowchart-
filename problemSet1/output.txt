@@ -1,0 +1,9 @@
+--- HelloWorld Output ---
+Hello, World
+\n--- HelloGoodbye Output ---
+Hello Kevin and Bob.
+Goodbye Bob and Kevin.
+\n--- RandomWord Output (example 1) ---
+tails
+\n--- RandomWord Output (example 2) ---
+tails

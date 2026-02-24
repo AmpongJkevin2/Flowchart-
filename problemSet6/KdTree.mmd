@@ -1,0 +1,1 @@
+graph TD; A((Start))-->B{x==null?}; B--Yes-->C[new Node]; B--No-->D{p==x.p?}; D--Yes-->E[return x]; D--No-->F[compare]-->G{p<x?}; G--Yes-->H[insert lb]; G--No-->I[insert rt]; H-->J[return x]; I-->J;

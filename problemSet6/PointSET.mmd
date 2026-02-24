@@ -1,0 +1,1 @@
+graph TD; A((Start))-->B{isEmpty?}; B--Yes-->C[null]; B--No-->D[min=inf]; D-->E[For each point]-->F{dist<min?}; F--Yes-->G[update min]-->E; F--No-->E; E-->H[/Return nearest/];

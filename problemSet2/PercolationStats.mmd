@@ -1,0 +1,1 @@
+graph LR; A((Start))-->B[i=0]; B-->C{i<trials?}; C--Yes-->D[perc=new]; D-->E{percolates?}; E--No-->F[open random]; F-->E; E--Yes-->G[record]; G-->H[i++]; H-->C; C--No-->K((End));

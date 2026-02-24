@@ -1,0 +1,4 @@
+Size (PointSET): 5
+Size (KdTree): 5
+Nearest to (0.8, 0.1) (PointSET): (0.7, 0.2)
+Nearest to (0.8, 0.1) (KdTree): (0.7, 0.2)

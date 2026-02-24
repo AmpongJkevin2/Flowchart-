@@ -1,0 +1,21 @@
+--- Deque Output ---
+Is empty? true
+Size: 2
+1
+2
+Removed first: 1
+Removed last: 2
+Size: 0
+\n--- RandomizedQueue Output ---
+Is empty? true
+Size: 3
+Sample: 1
+3
+2
+1
+Dequeued: 3
+Size: 2
+\n--- Permutation Output ---
+E
+A
+C

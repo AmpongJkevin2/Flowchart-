@@ -1,0 +1,1 @@
+graph TD; subgraph "addFirst"; A((Start))-->B{item==null?}; B--Yes-->C[Exception]; B--No-->D[...]; D-->E((End)); end; subgraph "removeLast"; F((Start))-->G{isEmpty?}; G--Yes-->H[Exception]; G--No-->I[...]; I-->J((End)); end

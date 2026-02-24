@@ -1,0 +1,54 @@
+name: Build Solution PDF
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Check out repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 3. Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: 4. Generate Flowchart Images
+        run: |
+          # Create a directory for the final assets
+          mkdir -p final_report
+          # Loop through all .mmd files and generate PNGs
+          for mmd_file in $(find . -type f -name "*.mmd"); do
+            output_png="${mmd_file%.mmd}_flowchart.png"
+            echo "Processing $mmd_file -> $output_png"
+            mmdc -i "$mmd_file" -o "$output_png" -w 1024 -H 768
+          done
+
+      - name: 5. Setup Python and Install WeasyPrint
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install weasyprint
+
+      - name: 6. Build Final PDF
+        run: |
+          # Copy all assets to the reporting directory
+          cp -r problemSet* final_report/
+          cp All_Solutions.html final_report/
+          # Generate PDF
+          weasyprint final_report/All_Solutions.html final_report/Coursera_Algorithms_Solutions.pdf
+
+      - name: 7. Upload PDF as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Solution-Report-PDF
+          path: final_report/Coursera_Algorithms_Solutions.pdf
