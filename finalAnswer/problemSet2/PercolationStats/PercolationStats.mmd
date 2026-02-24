@@ -4,8 +4,8 @@ graph TD
     C --> D[timer = new Stopwatch()];
     D --> E[stats = new PercolationStats(n, T)];
     E --> F[time = timer.elapsedTime()];
-    F --> G["System.out.println(""mean..."" + stats.mean())"];
-    G --> H["System.out.println(""stddev..."" + stats.stddev())"];
-    H --> I["System.out.println(""95% confidence interval..."" + stats.confidenceLo() + "", "" + stats.confidenceHi())"];
-    I --> J["System.out.println(""elapsed time..."" + time)"];
+    F --> G["System.out.println(&quot;mean                    = &quot; + stats.mean())"];
+    G --> H["System.out.println(&quot;stddev                  = &quot; + stats.stddev())"];
+    H --> I["System.out.println(&quot;95% confidence interval = [&quot; + stats.confidenceLo() + &quot;, &quot; + stats.confidenceHi() + &quot;]&quot;)"];
+    I --> J["System.out.println(&quot;elapsed time            = &quot; + time)"];
     J --> K[End];

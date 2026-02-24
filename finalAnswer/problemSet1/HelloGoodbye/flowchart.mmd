@@ -2,7 +2,7 @@ graph TD
     A[Start] --> B{args.length >= 2};
     B -- True --> C["name1 = args[0]"];
     C --> D["name2 = args[1]"];
-    D --> E["System.out.println(""Hello "" + name1 + "" and "" + name2 + ""."")"];
-    E --> F["System.out.println(""Goodbye "" + name2 + "" and "" + name1 + ""."")"];
+    D --> E["System.out.println(&quot;Hello &quot; + name1 + &quot; and &quot; + name2 + &quot;.&quot;)"];
+    E --> F["System.out.println(&quot;Goodbye &quot; + name2 + &quot; and &quot; + name1 + &quot;.&quot;)"];
     F --> G[End];
     B -- False --> G;

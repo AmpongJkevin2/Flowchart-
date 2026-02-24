@@ -1,14 +1,14 @@
 graph TD
     A[Start] --> B["rq = new RandomizedQueue<Integer>()"];
-    B --> C["System.out.println(""Is empty? "" + rq.isEmpty())"];
+    B --> C["System.out.println(&quot;Is empty? &quot; + rq.isEmpty())"];
     C --> D[rq.enqueue(1)];
     D --> E[rq.enqueue(2)];
     E --> F[rq.enqueue(3)];
-    F --> G["System.out.println(""Size: "" + rq.size())"];
-    G --> H["System.out.println(""Sample: "" + rq.sample())"];
+    F --> G["System.out.println(&quot;Size: &quot; + rq.size())"];
+    G --> H["System.out.println(&quot;Sample: &quot; + rq.sample())"];
     H --> I[For each int i in rq];
     I --> J["System.out.println(i)"];
     J --> I;
-    I --> K["System.out.println(""Dequeued: "" + rq.dequeue())"];
-    K --> L["System.out.println(""Size: "" + rq.size())"];
+    I --> K["System.out.println(&quot;Dequeued: &quot; + rq.dequeue())"];
+    K --> L["System.out.println(&quot;Size: &quot; + rq.size())"];
     L --> M[End];
