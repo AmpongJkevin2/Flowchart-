@@ -10,6 +10,7 @@ on:
 jobs:
   build_pdf:
     runs-on: ubuntu-latest
+
     steps:
       - name: 1. Check out repository
         uses: actions/checkout@v4
@@ -24,13 +25,19 @@ jobs:
 
       - name: 4. Generate Flowchart Images
         run: |
-          # Create a directory for the final assets
+          # Create a directory for the final assets and copy source files
           mkdir -p final_report
+          cp -r problemSet* final_report/
+          cp All_Solutions.html final_report/
+          
+          # Create puppeteer config to run without sandbox
+          echo '{"args": ["--no-sandbox"]}' > puppeteer-config.json
+          
           # Loop through all .mmd files and generate PNGs
-          for mmd_file in $(find . -type f -name "*.mmd"); do
+          for mmd_file in $(find ./final_report -type f -name "*.mmd"); do
             output_png="${mmd_file%.mmd}_flowchart.png"
             echo "Processing $mmd_file -> $output_png"
-            mmdc -i "$mmd_file" -o "$output_png" -w 1024 -H 768
+            mmdc -i "$mmd_file" -o "$output_png" -p puppeteer-config.json
           done
 
       - name: 5. Setup Python and Install WeasyPrint
@@ -41,12 +48,9 @@ jobs:
 
       - name: 6. Build Final PDF
         run: |
-          # Copy all assets to the reporting directory
-          cp -r problemSet* final_report/
-          cp All_Solutions.html final_report/
-          # Generate PDF
-          weasyprint final_report/All_Solutions.html final_report/Coursera_Algorithms_Solutions.pdf
-
+          weasyprint All_Solutions.html Coursera_Algorithms_Solutions.pdf
+        working-directory: ./final_report
+        
       - name: 7. Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
