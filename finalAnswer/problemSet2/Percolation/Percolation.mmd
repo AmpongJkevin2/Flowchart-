@@ -1,0 +1,26 @@
+graph TD
+    A[Start open(row, col)] --> B{isOpen(row, col)};
+    B -- True --> G[End];
+    B -- False --> C[grid[row - 1][col - 1] = true];
+    C --> D[openSites++];
+    D --> E[siteIndex = xyTo1D(row, col)];
+    E --> F{row == 1};
+    F -- True --> H[uf.union(siteIndex, topVirtualSite)];
+    F -- False --> I{row == n};
+    I -- True --> J[uf.union(siteIndex, bottomVirtualSite)];
+    I -- False --> K;
+    H --> K;
+    J --> K;
+    K --> L{row > 1 && isOpen(row - 1, col)};
+    L -- True --> M[uf.union(siteIndex, xyTo1D(row - 1, col))];
+    L -- False --> N;
+    M --> N{row < n && isOpen(row + 1, col)};
+    N -- True --> O[uf.union(siteIndex, xyTo1D(row + 1, col))];
+    N -- False --> P;
+    O --> P{col > 1 && isOpen(row, col - 1))};
+    P -- True --> Q[uf.union(siteIndex, xyTo1D(row, col - 1))];
+    P -- False --> R;
+    Q --> R{col < n && isOpen(row, col + 1))};
+    R -- True --> S[uf.union(siteIndex, xyTo1D(row, col + 1))];
+    R -- False --> T[End];
+    S --> T;

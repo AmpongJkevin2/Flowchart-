@@ -1,0 +1,11 @@
+graph TD
+    A[Start] --> B[n = Integer.parseInt(args[0])];
+    B --> C[T = Integer.parseInt(args[1])];
+    C --> D[timer = new Stopwatch()];
+    D --> E[stats = new PercolationStats(n, T)];
+    E --> F[time = timer.elapsedTime()];
+    F --> G["System.out.println(""mean..."" + stats.mean())"];
+    G --> H["System.out.println(""stddev..."" + stats.stddev())"];
+    H --> I["System.out.println(""95% confidence interval..."" + stats.confidenceLo() + "", "" + stats.confidenceHi())"];
+    I --> J["System.out.println(""elapsed time..."" + time)"];
+    J --> K[End];

@@ -1,0 +1,18 @@
+graph TD
+    A[Start Solver(initial)] --> B[pq.insert initial node];
+    B --> C[twinPq.insert initial.twin node];
+    C --> D[node = pq.delMin()];
+    D --> E{node.board.isGoal()};
+    E -- True --> F[foundSolvable = true, break];
+    E -- False --> G[Insert neighbors into pq if not previous];
+    G --> H[twinNode = twinPq.delMin()];
+    H --> I{twinNode.board.isGoal()};
+    I -- True --> J[foundSolvable = false, break];
+    I -- False --> K[Insert neighbors into twinPq if not previous];
+    K --> D;
+    F --> L{foundSolvable};
+    J --> L;
+    L -- True --> M[Reconstruct solution path];
+    L -- False --> N[solution = null];
+    M --> O[End];
+    N --> O;

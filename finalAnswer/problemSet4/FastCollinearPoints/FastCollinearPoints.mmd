@@ -1,0 +1,15 @@
+graph TD
+    A[Start FastCollinearPoints(points)] --> B{points == null};
+    B -- True --> C[Throw IllegalArgumentException];
+    B -- False --> D[Check for null points and duplicates];
+    D --> E[Sort pointsCopy];
+    E --> F[For each point p in pointsCopy];
+    F --> G[Sort other points by slope to p];
+    G --> H[Find groups of 3 or more points with same slope to p];
+    H --> I{p is the smallest point in group};
+    I -- True --> J[Add LineSegment];
+    I -- False --> K[Skip to next group];
+    J --> K;
+    K --> L{More points?};
+    L -- True --> F;
+    L -- False --> M[End];

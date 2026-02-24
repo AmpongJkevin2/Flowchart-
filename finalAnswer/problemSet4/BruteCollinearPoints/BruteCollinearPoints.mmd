@@ -1,0 +1,17 @@
+graph TD
+    A[Start BruteCollinearPoints(points)] --> B{points == null};
+    B -- True --> C[Throw IllegalArgumentException];
+    B -- False --> D[Check for null points and duplicates];
+    D --> E[Sort pointsCopy];
+    E --> F[i = 0 to n-4];
+    F --> G[j = i+1 to n-3];
+    G --> H[k = j+1 to n-2];
+    H --> I[l = k+1 to n-1];
+    I --> J{Slopes PQ, PR, PS are equal};
+    J -- True --> K[Add LineSegment p, s];
+    J -- False --> I;
+    K --> I;
+    I -- Done --> H;
+    H -- Done --> G;
+    G -- Done --> F;
+    F -- Done --> L[End];

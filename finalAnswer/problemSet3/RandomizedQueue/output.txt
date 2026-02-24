@@ -1,0 +1,9 @@
+java -cp .:problemSet3/algs4.jar:problemSet3 RandomizedQueue
+Is empty? true
+Size: 3
+Sample: 2
+2
+3
+1
+Dequeued: 2
+Size: 2

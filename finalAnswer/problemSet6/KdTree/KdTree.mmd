@@ -1,0 +1,15 @@
+graph TD
+    A[Start insert(p)] --> B[root = insert(root, p, ...)];
+    B --> C{x == null};
+    C -- True --> D[size++, return new Node];
+    C -- False --> E{x.p.equals(p)};
+    E -- True --> F[return x];
+    E -- False --> G[cmp = vertical ? p.x vs x.p.x : p.y vs x.p.y];
+    G --> H{cmp < 0};
+    H -- True --> I[x.lb = insert(x.lb, ...)];
+    H -- False --> J[x.rt = insert(x.rt, ...)];
+    I --> K[return x];
+    J --> K;
+    D --> L[End];
+    F --> L;
+    K --> L;

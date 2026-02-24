@@ -1,0 +1,1 @@
+Percolation.java is a class that models a percolation system. It does not have a main method, so it is not a runnable program on its own. It is meant to be used by another class, such as PercolationStats.java, which runs simulations using this class. Therefore, there is no direct output from Percolation.java.

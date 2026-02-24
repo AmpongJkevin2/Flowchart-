@@ -1,0 +1,13 @@
+graph TD
+    A[Start] --> B[deque = new Deque<Integer>()];
+    B --> C["System.out.println(""Is empty? "" + deque.isEmpty())"];
+    C --> D[deque.addFirst(1)];
+    D --> E[deque.addLast(2)];
+    E --> F["System.out.println(""Size: "" + deque.size())"];
+    F --> G[For each int i in deque];
+    G --> H["System.out.println(i)"];
+    H --> G;
+    G --> I["System.out.println(""Removed first: "" + deque.removeFirst())"];
+    I --> J["System.out.println(""Removed last: "" + deque.removeLast())"];
+    J --> K["System.out.println(""Size: "" + deque.size())"];
+    K --> L[End];

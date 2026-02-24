@@ -1,0 +1,5 @@
+java -cp .:problemSet2/algs4.jar:problemSet2 PercolationStats 20 10
+mean                    = 0.5667500000000001
+stddev                  = 0.04156738170996847
+95% confidence interval = [0.5409862698956676, 0.5925137301043326]
+elapsed time            = 0.015

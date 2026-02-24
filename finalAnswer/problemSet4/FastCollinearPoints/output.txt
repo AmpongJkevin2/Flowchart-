@@ -1,0 +1,2 @@
+java -cp .:problemSet4/algs4.jar:problemSet4 SampleClient problemSet4/input8.txt
+(3000, 4000) -> (20000, 21000)

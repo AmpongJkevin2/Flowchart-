@@ -1,0 +1,1 @@
+Board.java represents an n-by-n board of tiles. It provides methods for calculating distances (Hamming and Manhattan) and generating neighboring boards. It is primarily used by the Solver class to find the shortest path to the goal state.

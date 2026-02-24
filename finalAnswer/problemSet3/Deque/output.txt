@@ -1,0 +1,8 @@
+java -cp .:problemSet3/algs4.jar:problemSet3 Deque
+Is empty? true
+Size: 2
+1
+2
+Removed first: 1
+Removed last: 2
+Size: 0

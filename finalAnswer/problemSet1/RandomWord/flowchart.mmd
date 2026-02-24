@@ -1,0 +1,12 @@
+graph TD
+    A[Start] --> B[champion = ""];
+    B --> C[count = 0];
+    C --> D{!StdIn.isEmpty()};
+    D -- True --> E[word = StdIn.readString()];
+    E --> F[count++];
+    F --> G{StdRandom.bernoulli(1.0 / count)};
+    G -- True --> H[champion = word];
+    H --> D;
+    G -- False --> D;
+    D -- False --> I[StdOut.println(champion)];
+    I --> J[End];

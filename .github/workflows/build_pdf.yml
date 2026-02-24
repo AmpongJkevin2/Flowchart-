@@ -28,6 +28,7 @@ jobs:
           # Create a directory for the final assets and copy source files
           mkdir -p final_report
           cp -r problemSet* final_report/
+          cp -r finalAnswer final_report/
           cp All_Solutions.html final_report/
           
           # Create puppeteer config to run without sandbox

@@ -1,0 +1,15 @@
+graph TD
+    A[Start Board(tiles)] --> B[n = tiles.length];
+    B --> C[i = 0 to n-1];
+    C --> D[j = 0 to n-1];
+    D --> E[this.tiles[i][j] = tiles[i][j]];
+    E --> F{tiles[i][j] != 0};
+    F -- True --> G[targetX = tiles - 1 / n];
+    G --> H[targetY = tiles - 1 % n];
+    H --> I[manhattan += Math.abs(i - targetX) + Math.abs(j - targetY)];
+    I --> J;
+    F -- False --> J;
+    J --> D;
+    D -- Done --> C;
+    C -- Done --> K[cachedManhattan = manhattan];
+    K --> L[End];

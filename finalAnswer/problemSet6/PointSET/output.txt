@@ -1,0 +1,1 @@
+PointSET.java is a data structure that represents a set of points in a 2D plane using a simple brute-force implementation with a red-black tree (SET). It provides methods for point insertion, range search, and nearest neighbor search.

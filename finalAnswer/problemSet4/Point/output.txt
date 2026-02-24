@@ -1,0 +1,1 @@
+Point.java is a helper class representing a point in a 2D plane. It does not have a main method and is used by BruteCollinearPoints and FastCollinearPoints to perform geometric calculations.

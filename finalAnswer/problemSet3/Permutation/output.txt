@@ -1,0 +1,4 @@
+echo "A B C D E F G H I" | java -cp .:problemSet3/algs4.jar:problemSet3 Permutation 3
+I
+G
+C

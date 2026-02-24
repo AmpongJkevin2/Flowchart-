@@ -1,0 +1,2 @@
+echo "apple banana cherry date elderberry" | java -cp .:problemSet1/algs4.jar:problemSet1 RandomWord
+apple

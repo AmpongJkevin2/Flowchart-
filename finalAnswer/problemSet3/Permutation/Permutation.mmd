@@ -1,0 +1,12 @@
+graph TD
+    A[Start] --> B[k = Integer.parseInt(args[0])];
+    B --> C[rq = new RandomizedQueue<String>()];
+    C --> D{!StdIn.isEmpty()};
+    D -- True --> E[rq.enqueue(StdIn.readString())];
+    E --> D;
+    D -- False --> F[i = 0];
+    F --> G{i < k};
+    G -- True --> H["System.out.println(rq.dequeue())"];
+    H --> I[i++];
+    I --> G;
+    G -- False --> J[End];

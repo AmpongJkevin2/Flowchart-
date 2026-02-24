@@ -1,0 +1,3 @@
+java -cp .:problemSet1/algs4.jar:problemSet1 HelloGoodbye Kevin Bob
+Hello Kevin and Bob.
+Goodbye Bob and Kevin.
