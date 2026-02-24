@@ -1,1 +1,25 @@
-graph TD; subgraph "addFirst"; A((Start))-->B{item==null?}; B--Yes-->C[Exception]; B--No-->D[...]; D-->E((End)); end; subgraph "removeLast"; F((Start))-->G{isEmpty?}; G--Yes-->H[Exception]; G--No-->I[...]; I-->J((End)); end
+graph TD;
+    subgraph "addFirst(item)"
+    A1((Start)) --> B1{"Is the item null?"};
+    B1 -- "No (Valid item)" --> C1["Create new node and update links"];
+    B1 -- "Yes (Invalid)" --> D1["Throw IllegalArgumentException"];
+    C1 --> E1{"Is the deque empty?"};
+    E1 -- "No (Existing elements)" --> F1["Link old first to new first"];
+    E1 -- "Yes (First element)" --> G1["Set last = first"];
+    F1 --> H1["Increment size"];
+    G1 --> H1;
+    H1 --> I1((End));
+    end;
+
+    subgraph "removeLast()"
+    A2((Start)) --> B2{"Is the deque empty?"};
+    B2 -- "No (Contains items)" --> C2["Retrieve item from last"];
+    B2 -- "Yes (Empty)" --> D2["Throw NoSuchElementException"];
+    C2 --> E2["Set last = last.prev"];
+    E2 --> F2["Decrement size"];
+    F2 --> G2{"Is the deque now empty?"};
+    G2 -- "No (Still has items)" --> H2["Set last.next = null"];
+    G2 -- "Yes (Now empty)" --> I2["Set first = null"];
+    H2 --> J2((End));
+    I2 --> J2;
+    end;

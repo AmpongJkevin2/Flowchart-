@@ -1,1 +1,14 @@
-graph TD; A((Start))-->B[i=0]; B-->C{i<trials?}; C--Yes-->D[perc=new]; D-->E{percolates?}; E--No-->F[open random]; F-->E; E--Yes-->G[record]; G-->H[i++]; H-->C; C--No-->K((End));
+graph TD;
+    A((Start)) --> B["Initialize trials and threshold array"];
+    B --> C["Set i = 0"];
+    C --> D{"Is i < trials?"};
+    D -- "No (Loop finished)" --> K["Calculate mean, stddev, and confidence interval"];
+    D -- "Yes (Next trial)" --> E["Initialize new Percolation object"];
+    E --> F{"Does the system percolate?"};
+    F -- "No (Keep opening sites)" --> G["Pick random blocked site (row, col)"];
+    G --> H["Open site (perc.open(row, col))"];
+    H --> F;
+    F -- "Yes (Percolated)" --> I["Record threshold = openSites / n*n"];
+    I --> J["Increment i (i++)"];
+    J --> D;
+    K --> L((End));
